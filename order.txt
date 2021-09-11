@@ -1,0 +1,17 @@
+drop database orderdb;
+create schema `orderdb`;
+use `orderdb`;
+drop table orders;
+create table orders(orderid varchar(10),buyerid varchar(50),amount double,orderdate date,address varchar(100),status varchar(50));
+
+insert into orders values('1','B101',100,'2020-09-12','KUPT','ORDERPLACED');
+insert into orders values('2','B102',50,'2021-03-12','MDYP','ORDERPLACED');
+
+select * from orders;
+
+create table productsordered(buyerid varchar(50),prodid varchar(50),sellerid varchar(10),quantity integer,primary key(buyerid,prodid));
+
+insert into productsordered values('B101','P101','2',1);
+insert into productsordered values('B102','P102','3',1);
+
+select * from productsordered;
